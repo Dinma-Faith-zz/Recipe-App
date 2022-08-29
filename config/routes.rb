@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'foods#index'
+
   resources :recipe_foods
   resources :recipes
   resources :foods
