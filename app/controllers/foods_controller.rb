@@ -1,9 +1,9 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: %i[show edit update destroy]
+  before_action :redirect_if_not_signed_in, only: %i[new create]
 
   # GET /foods or /foods.json
   def index
-    @foods = Food.all
+    @food = Food.all
   end
 
   # GET /foods/1 or /foods/1.json
@@ -19,7 +19,7 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
-    @food = Food.new(food_params)
+    @food = current_user.foods.new(food_params)
 
     respond_to do |format|
       if @food.save
@@ -47,6 +47,7 @@ class FoodsController < ApplicationController
 
   # DELETE /foods/1 or /foods/1.json
   def destroy
+    @food = Food.find(params[:id])
     @food.destroy
 
     respond_to do |format|
