@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -11,11 +9,11 @@ class Ability
     #   return unless user.admin?
     #   can :manage, :all
     user ||= User.new # guest user (not logged in)
-    can :read, :all 
+    can :read, :all
     if user.admin? :admin
       can :manage, :all
     else
-      can :manage, Food, user.id: user.id
+      can :manage, Food, user_id: user.id
       can :read, :all
     end
     # The first argument to `can` is the action you are giving the user
