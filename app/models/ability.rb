@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -10,7 +8,7 @@ class Ability
     #   can :read, :all
     #   return unless user.admin?
     #   can :manage, :all
-     user ||= User.new # guest user (not logged in)
+    user ||= User.new # guest user (not logged in)
     can :read, :all
     if user.role? :admin
       can :manage, :all
