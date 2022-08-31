@@ -18,6 +18,9 @@
           <li class="nav-item">
             <%= link_to "Foods", foods_path, class:"nav-link", method: :get %>
           </li>
+          <li class="nav-item">
+            <%= link_to "Recipe",new_recipe_path , class:"nav-link"%>
+          </li>
           
         <% else %>
           <li class="nav-item">
@@ -28,6 +31,9 @@
           </li>
           <li class="nav-item">
             <%= link_to "Public Recipes", public_recipes_path, class:"nav-link", method: :get %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Recipe",new_recipe_path , class:"nav-link"%>
           </li>
         <% end %>
       </ul>
