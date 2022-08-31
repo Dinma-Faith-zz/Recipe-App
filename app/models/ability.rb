@@ -2,15 +2,18 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.new # guest user (not logged in)
-    if user.is? :admin
+    # add_role_to_index
+    user ||= User.new
+
+    if user.role == 'admin'
+
       can :manage, :all
     else
       can :manage, Food, user_id: user.id
       can :manage, Recipe, user_id: user.id
-      can :read, Recipe do |recipe|
-        recipe.user == user || recipe.public == true || !recipe.user_id?
-      end
+      # can :read, Recipe do |recipe|
+      #   recipe.user == user || recipe.public == true || !recipe.user_id?
+      # end
 
     end
     # The first argument to `can` is the action you are giving the user

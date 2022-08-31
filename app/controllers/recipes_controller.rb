@@ -1,16 +1,24 @@
 class RecipesController < ApplicationController
+  before_action :redirect_if_not_signed_in, only: %i[new create]
   before_action :set_recipe, only: %i[show edit update destroy]
+  load_and_authorize_resource
 
   # GET /recipes or /recipes.json
   def index
+    @recipes = current_user.recipes
     @recipes = @user.recipes
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    redirect_if_not_signed_in unless @recipe.public
+
+    # @recipe_foods = @recipe.recipe_foods.includes(:food)
+  end
 
   # GET /recipes/new
   def new
+    # @recipes = current_user.recipes.includes(:foods)
     @recipe = Recipe.new
   end
 
@@ -19,7 +27,7 @@ class RecipesController < ApplicationController
 
   # POST /recipes or /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.new(recipe_params)
 
     respond_to do |format|
       if @recipe.save
@@ -47,6 +55,7 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
+    @recipe = Recipe.find_by(id: params[:id])
     @recipe.destroy
 
     respond_to do |format|
