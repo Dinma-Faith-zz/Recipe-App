@@ -1,9 +1,10 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
+  load_and_authorize_resource
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   # GET /recipes/1 or /recipes/1.json
@@ -11,7 +12,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
-    @recipe = Recipe.new
+    @recipes = current_user.recipes.includes(:foods)
   end
 
   # GET /recipes/1/edit
@@ -19,7 +20,7 @@ class RecipesController < ApplicationController
 
   # POST /recipes or /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.new(recipe_params)
 
     respond_to do |format|
       if @recipe.save
@@ -47,6 +48,7 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
+    @recipe = Recipe.find_by(id: params[:id])
     @recipe.destroy
 
     respond_to do |format|
