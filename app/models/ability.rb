@@ -2,7 +2,6 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    add_role_to_db
     user ||= User.new
 
     if user.role == 'admin'

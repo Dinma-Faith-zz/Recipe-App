@@ -4,15 +4,19 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = current_user.recipes
+    @user = User.find(params[:user_id])
+    @recipes = Recipe.includes(:user).where(user: @user.id)
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
 
   # GET /recipes/new
   def new
-    @recipes = current_user.recipes.includes(:foods)
+    @recipe = Recipe.new
+    puts current_user, "New method"
   end
 
   # GET /recipes/1/edit
@@ -20,11 +24,13 @@ class RecipesController < ApplicationController
 
   # POST /recipes or /recipes.json
   def create
-    @recipe = current_user.recipes.new(recipe_params)
+    @user = User.find(params[:user_id])
+    @recipe = Recipe.new(recipe_params)
+    @recipe.user_id = @user.id
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.' }
+        format.html { redirect_to user_recipes_path(@recipe), notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new, status: :unprocessable_entity }

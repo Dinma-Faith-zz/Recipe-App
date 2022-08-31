@@ -22,10 +22,9 @@
             <%= button_to "Delete", food_path(food.id), method: :delete, class: "btn btn-danger" %>
             </td>
         </tr>
+        <%= link_to "New recipe", new_recipe_path(food.recipes) %>
         <% end %>
     </tbody>
 </div>
 
-<%= link_to "New food", new_food_path %>
-<br />
-<%= link_to "New recipe", new_recipe_path %>
+        <%= link_to "New food", new_food_path(@foods) %>
