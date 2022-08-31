@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   # GET /recipes or /recipes.json
   def index
     @recipes = current_user.recipes
-    @recipes = @user.recipes
+    # @recipes = @user.recipes
   end
 
   # GET /recipes/1 or /recipes/1.json
