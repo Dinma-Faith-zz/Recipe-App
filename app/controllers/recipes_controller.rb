@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :redirect_if_not_signed_in, only: %i[new create]
   before_action :set_recipe, only: %i[show edit update destroy]
   load_and_authorize_resource
 
@@ -8,11 +9,16 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    redirect_if_not_signed_in unless @recipe.public
+    
+    # @recipe_foods = @recipe.recipe_foods.includes(:food)
+  end
 
   # GET /recipes/new
   def new
-    @recipes = current_user.recipes.includes(:foods)
+    # @recipes = current_user.recipes.includes(:foods)
+    @recipe = Recipe.new
   end
 
   # GET /recipes/1/edit
