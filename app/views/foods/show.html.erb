@@ -14,6 +14,7 @@
     </thead>
     <tbody>
         <% Food.all.each do |food| %>
+        <% if can? :manage, food %>
         <tr>
             <td><%= food.name %></td>
             <td><%= food.measurement_unit %></td>
@@ -22,6 +23,7 @@
                   <%= button_to "Delete", food_path(food.id), method: :delete, class: "btn btn-danger" %>
             </td>
         </tr>
+        <% end %>
         <% end %>
     </tbody>
   </table>
