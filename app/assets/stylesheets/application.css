@@ -2,116 +2,116 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
 
 * {
-    font-family: 'Poppins', sans-serif;
-  }
+  font-family: 'Poppins', sans-serif;
+}
 
-  .content {
-    margin: 90px 10% 0;
-  }
+.content {
+  margin: 90px 10% 0;
+}
 
 #food-list-page h1 {
-    font-weight: 900;
+  font-weight: 900;
 }
 
 #food-list-page .headline {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-  .center-form {
-    margin: 50px auto;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    gap: 10px;
-  }
+.center-form {
+  margin: 50px auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 10px;
+}
 
-  .form-group a {
-    margin: 10px 0;
-  }
-  
-  #public-recipes-page a {
-    text-decoration: none;
-    color: black;
-  }
+.form-group a {
+  margin: 10px 0;
+}
 
-  .spaced-container {
-    display: flex;
-    justify-content: space-between;
-  }
+#public-recipes-page a {
+  text-decoration: none;
+  color: black;
+}
 
-  #recipe-details-page {
-    padding: 50px 0;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    border: 5px solid;
-    justify-content: center;
-  }
+.spaced-container {
+  display: flex;
+  justify-content: space-between;
+}
 
-  #recipes {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
+#recipe-details-page {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border: 5px solid;
+  justify-content: center;
+}
 
-  .recipe {
-    border: 5px solid black;
-    padding: 10px;
-  }
+#recipes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-  .recipe-title-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-  }
+.recipe {
+  border: 5px solid black;
+  padding: 10px;
+}
 
-  #header {
-    display: flex;
-    position: fixed;
-    z-index: 2;
-    height: 70px;
-    inset: 0;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+.recipe-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
 
-  .header-container {
-    margin: 0 10%;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
+#header {
+  display: flex;
+  position: fixed;
+  z-index: 2;
+  height: 70px;
+  inset: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-  ul {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-  }
+.header-container {
+  margin: 0 10%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  #recipe-page {
-    margin: 50px 0;
-  }
-  
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-    }
+ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
 
-    .recipe-btn {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px;
-    }
+#recipe-page {
+  margin: 50px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.recipe-btn {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
