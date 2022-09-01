@@ -19,7 +19,10 @@
             <%= link_to "Foods", foods_path, class:"nav-link", method: :get %>
           </li>
           <li class="nav-item">
-            <%= link_to "Recipe",new_recipe_path , class:"nav-link"%>
+            <%= link_to "Recipes", recipes_path, class:"nav-link", method: :get %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "General Shopping List", general_shopping_list_index_path , class:"nav-link"%>
           </li>
           
         <% else %>
@@ -28,6 +31,9 @@
           </li>
           <li class="nav-item">
             <%= link_to "Sign In", new_user_session_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Foods", foods_path, class:"nav-link", method: :get %>
           </li>
           <li class="nav-item">
             <%= link_to "Public Recipes", public_recipes_path, class:"nav-link", method: :get %>
