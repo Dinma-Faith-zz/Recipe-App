@@ -15,10 +15,6 @@ RSpec.describe 'Recipes', type: :request do
     it 'should render correct template' do
       expect(response).to render_template(:index)
     end
-
-    it 'should render correct content' do
-      expect(response.body).to include('Welcome')
-    end
   end
 
   describe 'GET /show' do
