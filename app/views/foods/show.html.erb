@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<div>
+ 
+
+  <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Measurement Unit</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% Food.all.each do |food| %>
+        <% if can? :manage, food %>
+        <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= food.price %></td>
+            <td>
+                  <%= button_to "Delete", food_path(food.id), method: :delete, class: "btn btn-danger" %>
+            </td>
+        </tr>
+        <% end %>
+        <% end %>
+    </tbody>
+  </table>
+
+
+</div>
