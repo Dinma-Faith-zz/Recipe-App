@@ -14,13 +14,32 @@
   border-bottom: 1px solid #e5e5e5;
 }
 
+ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+ul li a {
+  color: #e1bee7;
+  font-weight: bold;
+}
+
+.form-group a {
+  margin: 10px 0;
+}
+
+ul li a:hover {
+  color: #fff;
+}
+
 .content {
   margin: 90px 10% 0;
 }
 
 #food-list-page h1 {
   font-weight: 900;
-  font-family: 'Rubik Moonrocks';
+  font-family: 'Rubik Moonrocks', sans-serif;
 }
 
 #food-list-page .headline {
@@ -42,10 +61,6 @@ form {
   gap: 10px;
 }
 
-.form-group a {
-  margin: 10px 0;
-}
-
 #public-recipes-page a {
   text-decoration: none;
   color: black;
@@ -53,7 +68,7 @@ form {
 
 #public-recipes-page h2 {
   font-weight: 900;
-  font-family: 'Rubik Moonrocks';
+  font-family: 'Rubik Moonrocks', sans-serif;
 }
 
 .spaced-container {
@@ -106,21 +121,6 @@ form {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-}
-
-ul {
-  display: flex;
-  list-style: none;
-  gap: 10px;
-}
-
-ul li a {
-  color: #e1bee7;
-  font-weight: bold;
-}
-
-ul li a:hover {
-  color: #fff;
 }
 
 .text-color {
