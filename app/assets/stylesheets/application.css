@@ -5,12 +5,22 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.body-bg {
+  background-color: #e1bee7;
+}
+
+.navbar-custom {
+  background-color: #9c2780;
+  border-bottom: 1px solid #e5e5e5;
+}
+
 .content {
   margin: 90px 10% 0;
 }
 
 #food-list-page h1 {
   font-weight: 900;
+  font-family: 'Rubik Moonrocks';
 }
 
 #food-list-page .headline {
@@ -39,6 +49,11 @@ form {
 #public-recipes-page a {
   text-decoration: none;
   color: black;
+}
+
+#public-recipes-page h2 {
+  font-weight: 900;
+  font-family: 'Rubik Moonrocks';
 }
 
 .spaced-container {
@@ -97,6 +112,22 @@ ul {
   display: flex;
   list-style: none;
   gap: 10px;
+}
+
+ul li a {
+  color: #e1bee7;
+  font-weight: bold;
+}
+
+ul li a:hover {
+  color: #fff;
+}
+
+.text-color {
+  color: #e1bee7;
+  font-family: 'Rubik Moonrocks', sans-serif;
+  font-weight: 500;
+  font-size: 50px;
 }
 
 #recipe-page {
