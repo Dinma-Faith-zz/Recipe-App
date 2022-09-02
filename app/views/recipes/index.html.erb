@@ -1,35 +1,15 @@
-<div class="container-fluid">
 
-<h2>Welcome</h2>
-
-<p style="color: green"><%= notice %></p>
-  <div class="d-flex flex-column align-items-center width-20 mt-4">
-    <%= link_to "Create a Recipe", new_recipe_path, class: "btn btn-success create" %>
+<div id="recipe-page" class="container">
+  <div class="header">
+    <h1>Your Recipes</h1>
+    <%= button_to "Add New Recipe", new_recipe_path, class: 'btn btn-success', method: :get %>
   </div>
-  <ul class="list-group list-unstyled">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <li class="border border-1 border-secondary container mt-5 rounded bio">
-      <div class="d-flex p-3">
-        <div>
-          <%= link_to recipe_path(recipe.id), id: "recipe_path#{recipe.id}", class: "text-decoration-none" do %>
-          <h5><%= recipe.name%></h5>
-          <% end %>
-          <div>
-            <%if can? :destroy, recipe %> <%= button_to "Delete", recipe_path(recipe.id),
-            method: :delete, class: "btn btn-outline-danger"%> <% end %>
-          </div>
-        </div>
-        <div>
-          <p class="px-5"><%= recipe.description%></p>
-        </div>
-      </div>
 
-      <p>
-      <%= link_to "Show this recipe", recipe %>
-<%= link_to "New recipe", new_recipe_path %>
-    </p>
-    </li>
+  <div id="recipes">
+    <% @recipes.each do |recipe| %>
+    <%= link_to recipe_path(recipe[:id])  do %>
+      <%= render recipe %>
     <% end %>
-  </ul>
+    <% end %>
+  </div>
 </div>

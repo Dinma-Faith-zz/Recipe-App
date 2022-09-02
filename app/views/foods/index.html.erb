@@ -1,10 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h2>Welcome</h2>
 
-<h1>Foods</h1>
+<div id="food-list-page" class="container">
+<div class="d-flex justify-content-between align-items-center headline">
+    <h1>Foods</h1>
+    <%= link_to "New food", new_food_path, class: 'btn btn-outline-info' %>
+</div>
 
-<div id="foods">
   <table class="table">
     <thead>
         <tr>
@@ -27,5 +29,3 @@
         <% end %>
     </tbody>
 </div>
-
-<%= link_to "New food", new_food_path %>
